@@ -1,0 +1,59 @@
+﻿
+{% include "header.html" %}
+
+<!-- Page Header-->
+<header  class="masthead">
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5">
+      <div class="col-md-10 col-lg-8 col-xl-7 px-3">
+        <div class="site-heading">
+          <h1>Image Information</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content-->
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+            
+            <div class="row">
+                <!-- Adding Flash message here for users trying to register twice -->
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <p class="flash">{{ message }}</p>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+            <div class="mx-5">
+         
+            <img class="card-img-top" src="/static/assets/uploads/{{file}}"  alt="Card image cap">
+                
+             <h3>Image Stats</h3>
+                <ul>
+                    <li>{{stats["unique colors"]}} total unique colors</li>
+                    <li>{{stats["pixels"]}} total pixels</li>
+                    <li>{{stats["resolution"]}} resolution</li>
+                </ul>
+
+            <h3>Top Color Frequency</h3>
+                {% for color in top_colors%}
+                
+                <div class="card color-card" style="background-color:{{color[0]}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{color[0]}}</h5>
+                        <p class="card-text">Pixel Count in Image: {{color[1]}}</p>
+                    </div>
+                </div>
+
+                {%endfor%}
+                
+            </div>
+
+    </div>
+</main>
+
+{% include "footer.html" %}
