@@ -4,10 +4,12 @@ colorama==0.4.6
 dominate==2.9.1
 Flask==3.0.3
 Flask-Bootstrap==3.3.7.1
+gunicorn==23.0.0
 itsdangerous==2.2.0
 Jinja2==3.1.4
 MarkupSafe==2.1.5
 numpy==2.1.2
+packaging==24.1
 pip==24.0
 setuptools==65.5.0
 visitor==0.1.3
