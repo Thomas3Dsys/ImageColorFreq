@@ -2,11 +2,11 @@ from flask import Flask, abort, render_template, redirect, url_for, flash, reque
 import os
 from werkzeug.utils import secure_filename
 from flask_bootstrap import Bootstrap5
-import pandas as pd
+#import pandas as pd
 from colorstats import get_image_top_colors
 
-from dotenv import load_dotenv
-load_dotenv()
+#from dotenv import load_dotenv
+#load_dotenv()
 
 def allowed_file(filename):
     return '.' in filename and \
